@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SubscriptionPlanController;
 use App\Http\Controllers\AdminSubscriptionController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/admin', [AdminController::class, 'show'])->name('admin.show');
 Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
@@ -35,6 +36,12 @@ Route::post('/fetchplan',[AdminSubscriptionController::class,'fetchplan']);
 
 Route::get('/login', [AdminController::class, 'login'])->name('login');
 Route::post('/login', [AdminController::class, 'login_check'])->name('login_check');
+
+Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create'); 
+Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/categories/edit/{id}', [CategoryController::class, 'edit'])->name('categories.edit');
+Route::post('/categories/update/{id}', [CategoryController::class, 'update'])->name('categories.update');
 
 Route::view('/', 'index');
 Route::view('/analytics', 'analytics');
