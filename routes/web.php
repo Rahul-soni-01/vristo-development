@@ -5,7 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SubscriptionPlanController;
 use App\Http\Controllers\AdminSubscriptionController;
 use App\Http\Controllers\PaymentController;
-ad
+
 Route::get('/admin', [AdminController::class, 'show'])->name('admin.show');
 Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
 Route::get('/admin/edit/', [AdminController::class, 'edit'])->name('admin.edit');
